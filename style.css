@@ -3,18 +3,18 @@
    1. RESET & GLOBAL THEME
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --black: #111111;
-    --dark: #1c1c1c;
-    --gray-dark: #333333;
-    --gray: #777777;
-    --gray-light: #eeeeee;
-    --white: #ffffff;
+    /* COLOR PALETTE */
+    --white: #FFFFFF;
+    --broken-white: #F5F3EE;
+    --black: #000000;
 
+    /* TYPOGRAPHY */
     --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'DM Sans', Arial, sans-serif;
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-accent: 'DM Sans', Arial, sans-serif;
 }
 
 * {
@@ -40,6 +40,20 @@ img {
     max-width: 100%;
 }
 
+/* GLOBAL TYPOGRAPHY */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+nav {
+    font-family: var(--font-body);
+}
+
 /* =========================================
    2. NAVIGATION BAR
 ========================================= */
@@ -49,7 +63,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 18px 5%;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--broken-white);
     background: rgba(255, 255, 255, 0.96);
     position: fixed;
     width: 100%;
@@ -76,15 +90,16 @@ img {
 .nav-links li a {
     text-decoration: none;
     color: var(--black);
+    font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: var(--gray);
+    opacity: 0.55;
 }
 
 /* =========================================
@@ -131,6 +146,7 @@ img {
 }
 
 .subtitle {
+    font-family: var(--font-accent);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -148,10 +164,11 @@ img {
 }
 
 .role {
+    font-family: var(--font-body);
     font-size: 1rem;
     border-left: 2px solid var(--black);
     padding-left: 15px;
-    color: #444444;
+    color: var(--black);
 }
 
 .scroll-arrow {
@@ -184,7 +201,7 @@ img {
 
 .about-section {
     padding: 120px 5%;
-    background: #f5f5f5;
+    background: var(--broken-white);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -217,9 +234,10 @@ img {
 }
 
 .about-desc {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     line-height: 1.9;
-    color: #444444;
+    color: var(--black);
     text-align: justify;
 }
 
@@ -244,9 +262,10 @@ img {
 
 .media-caption {
     margin-top: 12px;
+    font-family: var(--font-accent);
     font-size: 0.7rem;
     font-weight: 600;
-    color: var(--gray);
+    color: var(--black);
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -256,7 +275,7 @@ img {
 ========================================= */
 
 .resume-section {
-    background: var(--dark);
+    background: var(--black);
     color: var(--white);
     padding: 110px 5%;
     display: flex;
@@ -297,18 +316,18 @@ img {
 
 .resume-divider {
     border: none;
-    border-top: 1px solid #555555;
+    border-top: 1px solid var(--broken-white);
     margin: 25px 0;
 }
 
 .resume-divider-sub {
     border: none;
-    border-top: 1px solid #3d3d3d;
+    border-top: 1px solid var(--broken-white);
     margin: 18px 0;
 }
 
 .resume-heading {
-    font-family: var(--font-body);
+    font-family: var(--font-accent);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -329,7 +348,7 @@ img {
 
 .resume-normal {
     font-size: 0.88rem;
-    color: #c4c4c4;
+    color: var(--broken-white);
 }
 
 /* =========================================
@@ -337,7 +356,7 @@ img {
 ========================================= */
 
 .experience-section {
-    background: var(--dark);
+    background: var(--black);
     color: var(--white);
     padding: 70px 5% 110px;
 }
@@ -370,7 +389,7 @@ img {
     min-width: 280px;
     position: relative;
     padding-left: 30px;
-    border-left: 1px solid #888888;
+    border-left: 1px solid var(--broken-white);
     display: flex;
     flex-direction: column;
 }
@@ -395,22 +414,25 @@ img {
 }
 
 .timeline-date {
+    font-family: var(--font-accent);
     font-size: 0.8rem;
     font-weight: 600;
-    color: #aaaaaa;
+    color: var(--broken-white);
     margin-bottom: 6px;
     letter-spacing: 1px;
 }
 
 .timeline-role {
+    font-family: var(--font-body);
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 12px;
 }
 
 .timeline-desc {
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    color: #c4c4c4;
+    color: var(--broken-white);
     line-height: 1.8;
     max-width: 90%;
 }
@@ -433,8 +455,8 @@ img {
 ========================================= */
 
 .publication-section {
-    background: #292929;
-    color: var(--white);
+    background: var(--broken-white);
+    color: var(--black);
     padding: 110px 5%;
 }
 
@@ -449,6 +471,7 @@ img {
     font-weight: 500;
     letter-spacing: -1px;
     margin-bottom: 45px;
+    color: var(--black);
 }
 
 .pub-grid {
@@ -466,7 +489,7 @@ img {
     padding: 0;
     height: auto;
     overflow: hidden;
-    background: #111111;
+    background: var(--white);
     margin-bottom: 18px;
 }
 
@@ -502,6 +525,12 @@ img {
 
 /* Instagram embed */
 
+.instagram-embed-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .instagram-media {
     max-width: 100% !important;
     min-width: 0 !important;
@@ -515,21 +544,24 @@ img {
     font-weight: 600;
     line-height: 1.4;
     margin-bottom: 10px;
+    color: var(--black);
 }
 
 .card-category {
+    font-family: var(--font-accent);
     font-size: 0.68rem;
     font-weight: 700;
-    color: #aaaaaa;
+    color: var(--black);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 12px;
 }
 
 .card-desc {
+    font-family: var(--font-body);
     font-size: 0.85rem;
     line-height: 1.8;
-    color: #cccccc;
+    color: var(--black);
 }
 
 /* =========================================
@@ -537,7 +569,7 @@ img {
 ========================================= */
 
 .awards-section {
-    background: #f2f2f2;
+    background: var(--white);
     padding: 110px 5%;
 }
 
@@ -607,6 +639,7 @@ img {
 }
 
 .award-badge p {
+    font-family: var(--font-accent);
     font-size: 0.72rem;
     font-weight: 700;
     line-height: 1.3;
@@ -615,20 +648,20 @@ img {
 }
 
 .award-desc {
+    font-family: var(--font-body);
     font-size: 0.82rem;
     line-height: 1.7;
-    color: #555555;
+    color: var(--black);
 }
 
 .award-desc a {
-    color: #555555;
+    color: var(--black);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
 .award-desc a:hover {
-    color: var(--black);
     border-bottom-color: var(--black);
 }
 
@@ -681,8 +714,9 @@ img {
 }
 
 .contact-subtitle {
+    font-family: var(--font-body);
     font-size: 1rem;
-    color: #cccccc;
+    color: var(--broken-white);
     margin-bottom: 55px;
 }
 
@@ -697,33 +731,36 @@ img {
 
 .contact-item span {
     display: block;
+    font-family: var(--font-accent);
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 2px;
-    color: #aaaaaa;
+    color: var(--broken-white);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .contact-item a {
+    font-family: var(--font-body);
     font-size: 1rem;
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
     overflow-wrap: anywhere;
 }
 
 .contact-item a:hover {
-    color: #aaaaaa;
+    opacity: 0.65;
 }
 
 .contact-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 22px;
     text-align: center;
+    font-family: var(--font-accent);
     font-size: 0.72rem;
-    color: #999999;
+    color: var(--broken-white);
     letter-spacing: 1px;
 }
 
@@ -754,56 +791,88 @@ img {
    11. RESPONSIVE MOBILE
 ========================================= */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
-    /* Navbar */
+    /* NAVBAR */
 
     .navbar {
-        padding: 16px 5%;
+        position: sticky;
+        top: 0;
+        padding: 14px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .logo {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .nav-links {
-        gap: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px 14px;
     }
 
     .nav-links li a {
         font-size: 0.62rem;
-        letter-spacing: 0.5px;
+        white-space: nowrap;
     }
 
-    /* Hero */
+    /* HERO SECTION */
 
     .hero-section {
-        min-height: 750px;
+        position: relative;
+        width: 100%;
+        min-height: auto;
         height: auto;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .hero-image-container {
-        top: 70px;
+        position: relative;
+        top: auto;
+        left: auto;
         width: 100%;
-        height: 55%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+    }
+
+    .hero-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 25% center;
+        filter: grayscale(100%);
     }
 
     .hero-text-box {
+        position: relative;
         top: auto;
-        bottom: 12%;
-        right: 5%;
+        right: auto;
+        bottom: auto;
         transform: none;
         width: 90%;
-        padding: 35px 25px;
+        max-width: none;
+        margin: -30px auto 45px;
+        padding: 30px 22px;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.96);
     }
 
     .title {
-        font-size: clamp(3rem, 12vw, 4.5rem);
-        letter-spacing: -2px;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        letter-spacing: -1.5px;
     }
 
     .subtitle {
         font-size: 0.68rem;
+        letter-spacing: 2px;
     }
 
     .role {
@@ -811,14 +880,13 @@ img {
     }
 
     .scroll-arrow {
-        bottom: 20px;
-        right: 5%;
+        display: none;
     }
 
-    /* About */
+    /* ABOUT */
 
     .about-section {
-        padding: 85px 7%;
+        padding: 75px 6%;
         min-height: auto;
     }
 
@@ -830,13 +898,14 @@ img {
 
     .about-text-column,
     .about-media-column {
+        width: 100%;
         max-width: 100%;
         min-width: 0;
-        width: 100%;
+        flex: 1 1 100%;
     }
 
     .about-heading {
-        font-size: 2.8rem;
+        font-size: clamp(2.3rem, 9vw, 3rem);
     }
 
     .about-desc {
@@ -844,123 +913,243 @@ img {
         text-align: left;
     }
 
-    /* Resume */
+    /* RESUME */
 
     .resume-section {
-        padding: 85px 7%;
+        display: block;
+        padding: 60px 6%;
+        overflow: hidden;
     }
 
     .resume-container {
+        display: flex;
         flex-direction: column;
+        flex-wrap: nowrap;
         align-items: stretch;
-        gap: 40px;
+        width: 100%;
+        gap: 35px;
     }
 
     .resume-image-column,
     .resume-text-column {
+        width: 100%;
         max-width: 100%;
         min-width: 0;
+        flex: none;
+    }
+
+    .resume-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .resume-block {
         width: 100%;
     }
 
-    /* Experience */
+    .resume-heading,
+    .resume-item,
+    .resume-bold,
+    .resume-normal {
+        overflow-wrap: anywhere;
+    }
+
+    /* EXPERIENCE */
 
     .experience-section {
-        padding: 75px 7%;
+        padding: 75px 6%;
     }
 
     .experience-title {
         text-align: left;
         font-size: 2.5rem;
+        margin-bottom: 35px;
     }
 
     .experience-content {
         flex-direction: column-reverse;
-        gap: 40px;
+        gap: 35px;
     }
 
     .timeline-column,
     .experience-image-column {
         width: 100%;
         min-width: 0;
+        flex: 1 1 100%;
+    }
+
+    .timeline-column {
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -31px;
     }
 
     .timeline-desc {
         max-width: 100%;
     }
 
-    /* Publication */
+    .experience-img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* PUBLICATION */
 
     .publication-section {
-        padding: 85px 7%;
+        padding: 75px 6%;
     }
 
     .pub-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+        width: 100%;
     }
 
-    /* Awards */
+    .pub-grid > * {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .pub-grid .media-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    .pub-grid .media-wrapper iframe,
+    .pub-grid .media-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .media-wrapper-ig {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .media-wrapper-ig img {
+        position: static;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .instagram-embed-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .instagram-media {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* AWARDS */
 
     .awards-section {
-        padding: 85px 7%;
+        padding: 75px 6%;
     }
 
     .awards-grid {
-        gap: 35px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
     }
 
-    /* Contact */
+    .award-item {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .award-badge {
+        width: min(150px, 100%);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* CONTACT */
 
     .contact-section {
-        padding: 90px 7% 30px;
+        padding: 75px 6% 30px;
+        min-height: auto;
     }
 
     .contact-grid {
-        gap: 30px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
         margin-bottom: 60px;
+    }
+
+    .contact-item {
+        min-width: 0;
+    }
+
+    .contact-item a {
+        overflow-wrap: anywhere;
     }
 }
 
 /* =========================================
-   12. RESPONSIVE SMALL MOBILE
+   12. SMALL MOBILE
 ========================================= */
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
     .navbar {
-        padding: 14px 4%;
+        padding: 12px 4%;
+    }
+
+    .logo {
+        font-size: 1.05rem;
     }
 
     .nav-links {
-        gap: 9px;
+        gap: 7px 10px;
     }
 
     .nav-links li a {
         font-size: 0.55rem;
-        letter-spacing: 0;
     }
 
-    .logo {
-        font-size: 1.1rem;
-    }
-
-    .hero-section {
-        min-height: 680px;
-    }
+    /* HERO */
 
     .hero-image-container {
-        height: 52%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .hero-img {
+        object-position: 20% center;
     }
 
     .hero-text-box {
-        bottom: 13%;
-        padding: 30px 22px;
+        width: 90%;
+        margin-top: -25px;
+        padding: 25px 20px;
     }
 
     .title {
         font-size: 3rem;
     }
+
+    .subtitle {
+        font-size: 0.65rem;
+    }
+
+    .role {
+        font-size: 0.85rem;
+    }
+
+    /* OTHER SECTIONS */
 
     .about-heading {
         font-size: 2.4rem;
@@ -972,13 +1161,16 @@ img {
         font-size: 2.2rem;
     }
 
-    .pub-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
     .card-heading {
         font-size: 1.15rem;
+    }
+
+    .awards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .award-badge {
+        width: min(125px, 100%);
     }
 
     .contact-title {
@@ -987,9 +1179,5 @@ img {
 
     .contact-subtitle {
         font-size: 0.9rem;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
     }
 }
